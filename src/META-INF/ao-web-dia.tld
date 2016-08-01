@@ -34,7 +34,7 @@ along with ao-web-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 			</p>
 		]]></description>
 		<name>dia</name>
-		<tag-class>com.aoindustries.web.page.taglib.DiaTag</tag-class>
+		<tag-class>com.aoindustries.web.dia.taglib.DiaTag</tag-class>
 		<body-content>empty</body-content>
 		<attribute>
 			<description><![CDATA[
