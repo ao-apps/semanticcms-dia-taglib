@@ -22,7 +22,7 @@
  */
 package com.aoindustries.web.dia.taglib;
 
-import com.aoindustries.web.dia.servlet.impl.DiaImpl;
+import com.semanticcms.dia.servlet.impl.DiaImpl;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
