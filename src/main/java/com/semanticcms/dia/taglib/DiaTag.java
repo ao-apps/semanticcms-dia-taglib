@@ -22,56 +22,78 @@
  */
 package com.semanticcms.dia.taglib;
 
+import com.aoindustries.io.buffer.BufferResult;
+import com.aoindustries.io.buffer.BufferWriter;
+import com.aoindustries.io.buffer.SegmentedWriter;
+import com.semanticcms.core.model.ElementContext;
+import com.semanticcms.core.servlet.CaptureLevel;
+import com.semanticcms.core.taglib.ElementTag;
+import com.semanticcms.dia.model.Dia;
 import com.semanticcms.dia.servlet.impl.DiaImpl;
 import java.io.IOException;
+import java.io.Writer;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.PageContext;
-import javax.servlet.jsp.tagext.SimpleTagSupport;
 
-public class DiaTag extends SimpleTagSupport {
+/**
+ * Writes an img tag for the diagram thumbnail.
+ */
+public class DiaTag extends ElementTag<Dia> {
 
-	private String book;
-	public void setBook(String book) {
-		this.book = book;
+	public DiaTag() {
+		super(new Dia());
 	}
 
-	private String path;
+    public void setLabel(String label) {
+		element.setLabel(label);
+	}
+
+	public void setBook(String book) {
+		element.setBook(book);
+	}
+
 	public void setPath(String path) {
-		this.path = path;
+		element.setPath(path);
     }
 
-	private int width;
 	public void setWidth(int width) {
-		this.width = width;
+		element.setWidth(width);
 	}
 	
-	private int height;
 	public void setHeight(int height) {
-		this.height = height;
+		element.setHeight(height);
 	}
 
-	/**
-	 * Writes an img tag for the diagram thumbnail.
-	 */
+	private BufferResult writeMe;
 	@Override
-    public void doTag() throws IOException, JspTagException {
+	protected void doBody(CaptureLevel captureLevel) throws JspException, IOException {
 		try {
-			final PageContext pageContext = (PageContext)getJspContext();
-			DiaImpl.writeDiaImpl(
-				pageContext.getServletContext(),
-				(HttpServletRequest)pageContext.getRequest(),
-				(HttpServletResponse)pageContext.getResponse(),
-				pageContext.getOut(),
-				book,
-				path,
-				width,
-				height
-			);
+			super.doBody(captureLevel);
+			BufferWriter out = (captureLevel == CaptureLevel.BODY) ? new SegmentedWriter() : null;
+			try {
+				final PageContext pageContext = (PageContext)getJspContext();
+				DiaImpl.writeDiaImpl(
+					pageContext.getServletContext(),
+					(HttpServletRequest)pageContext.getRequest(),
+					(HttpServletResponse)pageContext.getResponse(),
+					out,
+					element
+				);
+			} finally {
+				if(out != null) out.close();
+			}
+			writeMe = out==null ? null : out.getResult();
 		} catch(ServletException e) {
 			throw new JspTagException(e);
 		}
+	}
+
+	@Override
+	public void writeTo(Writer out, ElementContext context) throws IOException {
+		if(writeMe != null) writeMe.writeTo(out);
 	}
 }
