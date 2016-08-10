@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-ao-web-dia-taglib - Java API for embedding Dia-based diagrams in web pages in a JSP environment.
+semanticcms-dia-taglib - Java API for embedding Dia-based diagrams in web pages in a JSP environment.
 Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
 
-This file is part of ao-web-dia-taglib.
+This file is part of semanticcms-dia-taglib.
 
-ao-web-dia-taglib is free software: you can redistribute it and/or modify
+semanticcms-dia-taglib is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-ao-web-dia-taglib is distributed in the hope that it will be useful,
+semanticcms-dia-taglib is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with ao-web-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
+along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <taglib version="2.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
 	<description>Java API for embedding Dia-based diagrams in web pages in a JSP environment.</description>
-	<display-name>ao-web-dia-taglib</display-name>
+	<display-name>semanticcms-dia-taglib</display-name>
 	<tlib-version>1.0</tlib-version>
-	<short-name>ao-web-dia-taglib</short-name>
-	<uri>http://aoindustries.com/ao-web-dia-taglib</uri>
+	<short-name>semanticcms-dia-taglib</short-name>
+	<uri>https://semanticcms.com/semanticcms-dia-taglib</uri>
 	<tag>
 		<description><![CDATA[
 			<p>
@@ -34,7 +34,7 @@ along with ao-web-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 			</p>
 		]]></description>
 		<name>dia</name>
-		<tag-class>com.aoindustries.web.dia.taglib.DiaTag</tag-class>
+		<tag-class>com.semanticcms.dia.taglib.DiaTag</tag-class>
 		<body-content>empty</body-content>
 		<attribute>
 			<description><![CDATA[
