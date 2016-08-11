@@ -48,7 +48,7 @@ public class DiaTag extends ElementTag<Dia> {
 		super(new Dia());
 	}
 
-    public void setLabel(String label) {
+	public void setLabel(String label) {
 		element.setLabel(label);
 	}
 
@@ -58,12 +58,12 @@ public class DiaTag extends ElementTag<Dia> {
 
 	public void setPath(String path) {
 		element.setPath(path);
-    }
+	}
 
 	public void setWidth(int width) {
 		element.setWidth(width);
 	}
-	
+
 	public void setHeight(int height) {
 		element.setHeight(height);
 	}
