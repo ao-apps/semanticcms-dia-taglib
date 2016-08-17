@@ -22,9 +22,12 @@
  */
 package com.semanticcms.dia.taglib;
 
+import com.aoindustries.io.TempFileList;
+import com.aoindustries.io.buffer.AutoTempFileWriter;
 import com.aoindustries.io.buffer.BufferResult;
 import com.aoindustries.io.buffer.BufferWriter;
 import com.aoindustries.io.buffer.SegmentedWriter;
+import com.aoindustries.servlet.filter.TempFileContext;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.servlet.CaptureLevel;
 import com.semanticcms.core.taglib.ElementTag;
@@ -73,20 +76,37 @@ public class DiaTag extends ElementTag<Dia> {
 	protected void doBody(CaptureLevel captureLevel) throws JspException, IOException {
 		try {
 			super.doBody(captureLevel);
-			BufferWriter out = (captureLevel == CaptureLevel.BODY) ? new SegmentedWriter() : null;
+			final PageContext pageContext = (PageContext)getJspContext();
+			final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
+			BufferWriter capturedOut;
+			if(captureLevel == CaptureLevel.BODY) {
+				// Enable temp files if temp file context active
+				capturedOut = TempFileContext.wrapTempFileList(
+					new SegmentedWriter(),
+					request,
+					// Java 1.8: AutoTempFileWriter::new
+					new TempFileContext.Wrapper<BufferWriter>() {
+						@Override
+						public BufferWriter call(BufferWriter original, TempFileList tempFileList) {
+							return new AutoTempFileWriter(original, tempFileList);
+						}
+					}
+				);
+			} else {
+				capturedOut = null;
+			}
 			try {
-				final PageContext pageContext = (PageContext)getJspContext();
 				DiaImpl.writeDiaImpl(
 					pageContext.getServletContext(),
-					(HttpServletRequest)pageContext.getRequest(),
+					request,
 					(HttpServletResponse)pageContext.getResponse(),
-					out,
+					capturedOut,
 					element
 				);
 			} finally {
-				if(out != null) out.close();
+				if(capturedOut != null) capturedOut.close();
 			}
-			writeMe = out==null ? null : out.getResult();
+			writeMe = capturedOut==null ? null : capturedOut.getResult();
 		} catch(ServletException e) {
 			throw new JspTagException(e);
 		}
