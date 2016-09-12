@@ -25,7 +25,7 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 	<description>Java API for embedding Dia-based diagrams in web pages in a JSP environment.</description>
 	<display-name>semanticcms-dia-taglib</display-name>
 	<tlib-version>1.0</tlib-version>
-	<short-name>semanticcms-dia-taglib</short-name>
+	<short-name>dia</short-name>
 	<uri>https://semanticcms.com/dia/taglib/</uri>
 	<tag>
 		<description><![CDATA[
