@@ -26,7 +26,7 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 	<display-name>semanticcms-dia-taglib</display-name>
 	<tlib-version>1.0</tlib-version>
 	<short-name>semanticcms-dia-taglib</short-name>
-	<uri>https://semanticcms.com/semanticcms-dia-taglib</uri>
+	<uri>https://semanticcms.com/dia/taglib/</uri>
 	<tag>
 		<description><![CDATA[
 			<p>
