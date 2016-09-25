@@ -38,6 +38,7 @@ import com.semanticcms.dia.servlet.impl.DiaImpl;
 import java.io.IOException;
 import java.io.Writer;
 import javax.el.ELContext;
+import javax.el.ValueExpression;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -50,28 +51,28 @@ import javax.servlet.jsp.PageContext;
  */
 public class DiaTag extends ElementTag<Dia> {
 
-	private Object label;
-	public void setLabel(Object label) {
+	private ValueExpression label;
+	public void setLabel(ValueExpression label) {
 		this.label = label;
 	}
 
-	private Object book;
-	public void setBook(Object book) {
+	private ValueExpression book;
+	public void setBook(ValueExpression book) {
 		this.book = book;
 	}
 
-	private Object path;
-	public void setPath(Object path) {
+	private ValueExpression path;
+	public void setPath(ValueExpression path) {
 		this.path = path;
 	}
 
-	private Object width;
-	public void setWidth(Object width) {
+	private ValueExpression width;
+	public void setWidth(ValueExpression width) {
 		this.width = width;
 	}
 
-	private Object height;
-	public void setHeight(Object height) {
+	private ValueExpression height;
+	public void setHeight(ValueExpression height) {
 		this.height = height;
 	}
 
