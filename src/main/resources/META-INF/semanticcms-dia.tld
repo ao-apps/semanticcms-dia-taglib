@@ -48,8 +48,6 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 			]]></description>
 			<name>id</name>
 			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 			<deferred-value>
 				<type>java.lang.String</type>
 			</deferred-value>
@@ -62,8 +60,6 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 			]]></description>
 			<name>label</name>
 			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 			<deferred-value>
 				<type>java.lang.String</type>
 			</deferred-value>
@@ -75,8 +71,6 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 			]]></description>
 			<name>book</name>
 			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 			<deferred-value>
 				<type>java.lang.String</type>
 			</deferred-value>
@@ -87,8 +81,6 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 			]]></description>
 			<name>path</name>
 			<required>true</required>
-			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 			<deferred-value>
 				<type>java.lang.String</type>
 			</deferred-value>
@@ -100,8 +92,6 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 			]]></description>
 			<name>width</name>
 			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.Integer</type>
 			<deferred-value>
 				<type>java.lang.Integer</type>
 			</deferred-value>
@@ -113,8 +103,6 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 			]]></description>
 			<name>height</name>
 			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.Integer</type>
 			<deferred-value>
 				<type>java.lang.Integer</type>
 			</deferred-value>
