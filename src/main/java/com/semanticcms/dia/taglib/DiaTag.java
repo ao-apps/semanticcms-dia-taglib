@@ -22,12 +22,14 @@
  */
 package com.semanticcms.dia.taglib;
 
+import static com.aoindustries.encoding.Coercion.zeroIfEmpty;
 import com.aoindustries.io.TempFileList;
 import com.aoindustries.io.buffer.AutoTempFileWriter;
 import com.aoindustries.io.buffer.BufferResult;
 import com.aoindustries.io.buffer.BufferWriter;
 import com.aoindustries.io.buffer.SegmentedWriter;
 import com.aoindustries.servlet.filter.TempFileContext;
+import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.servlet.CaptureLevel;
 import com.semanticcms.core.taglib.ElementTag;
@@ -35,6 +37,7 @@ import com.semanticcms.dia.model.Dia;
 import com.semanticcms.dia.servlet.impl.DiaImpl;
 import java.io.IOException;
 import java.io.Writer;
+import javax.el.ELContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,35 +50,51 @@ import javax.servlet.jsp.PageContext;
  */
 public class DiaTag extends ElementTag<Dia> {
 
-	public DiaTag() {
-		super(new Dia());
+	private Object label;
+	public void setLabel(Object label) {
+		this.label = label;
 	}
 
-	public void setLabel(String label) {
-		element.setLabel(label);
+	private Object book;
+	public void setBook(Object book) {
+		this.book = book;
 	}
 
-	public void setBook(String book) {
-		element.setBook(book);
+	private Object path;
+	public void setPath(Object path) {
+		this.path = path;
 	}
 
-	public void setPath(String path) {
-		element.setPath(path);
+	private Object width;
+	public void setWidth(Object width) {
+		this.width = width;
 	}
 
-	public void setWidth(int width) {
-		element.setWidth(width);
+	private Object height;
+	public void setHeight(Object height) {
+		this.height = height;
 	}
 
-	public void setHeight(int height) {
-		element.setHeight(height);
+	@Override
+	protected Dia createElement() {
+		return new Dia();
+	}
+
+	@Override
+	protected void evaluateAttributes(Dia dia, ELContext elContext) throws JspTagException, IOException {
+		super.evaluateAttributes(dia, elContext);
+		dia.setLabel(resolveValue(label, String.class, elContext));
+		dia.setBook(resolveValue(book, String.class, elContext));
+		dia.setPath(resolveValue(path, String.class, elContext));
+		dia.setWidth(zeroIfEmpty(resolveValue(width, Integer.class, elContext)));
+		dia.setHeight(zeroIfEmpty(resolveValue(height, Integer.class, elContext)));
 	}
 
 	private BufferResult writeMe;
 	@Override
-	protected void doBody(CaptureLevel captureLevel) throws JspException, IOException {
+	protected void doBody(Dia dia, CaptureLevel captureLevel) throws JspException, IOException {
 		try {
-			super.doBody(captureLevel);
+			super.doBody(dia, captureLevel);
 			final PageContext pageContext = (PageContext)getJspContext();
 			final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 			BufferWriter capturedOut;
@@ -101,7 +120,7 @@ public class DiaTag extends ElementTag<Dia> {
 					request,
 					(HttpServletResponse)pageContext.getResponse(),
 					capturedOut,
-					element
+					dia
 				);
 			} finally {
 				if(capturedOut != null) capturedOut.close();
