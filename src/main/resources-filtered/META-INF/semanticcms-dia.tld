@@ -25,7 +25,9 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 	version="2.1">
-	<description>@{project.description}</description>
+	<description><![CDATA[
+		<p>@{project.description}</p>
+	]]></description>
 	<display-name>@{project.name}</display-name>
 	<tlib-version>
 		<!-- Release: @{project.version} -->
@@ -44,10 +46,12 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 		<body-content>empty</body-content>
 		<attribute>
 			<description><![CDATA[
-				The id used in URL anchors.
-				If not provided, is generated from the label.
-				Must be unique per page.
-				Ids generated from labels will be unique, but may change as page structure changes.
+				<p>
+					The id used in URL anchors.
+					If not provided, is generated from the label.
+					Must be unique per page.
+					Ids generated from labels will be unique, but may change as page structure changes.
+				</p>
 			]]></description>
 			<name>id</name>
 			<required>false</required>
@@ -57,9 +61,11 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				The label displayed.
-				This value is also used in table of contents entries.
-				If not provided, defaults to the last path element of "path".
+				<p>
+					The label displayed.
+					This value is also used in table of contents entries.
+					If not provided, defaults to the last path element of "path".
+				</p>
 			]]></description>
 			<name>label</name>
 			<required>false</required>
@@ -69,8 +75,10 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				The book containing the file.
-				Defaults to the book of the current JSP file.
+				<p>
+					The book containing the file.
+					Defaults to the book of the current JSP file.
+				</p>
 			]]></description>
 			<name>book</name>
 			<required>false</required>
@@ -80,7 +88,9 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				The page-relative path to the file.
+				<p>
+					The page-relative path to the file.
+				</p>
 			]]></description>
 			<name>path</name>
 			<required>true</required>
@@ -90,8 +100,10 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				The width of the diagram thumbnail in pixels.
-				When neither width nor height are provided, defaults to 200.
+				<p>
+					The width of the diagram thumbnail in pixels.
+					When neither width nor height are provided, defaults to 200.
+				</p>
 			]]></description>
 			<name>width</name>
 			<required>false</required>
@@ -101,8 +113,10 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				The height of the diagram thumbnail in pixels.
-				When neither width nor height are provided, defaults to a value in proportion to the width.
+				<p>
+					The height of the diagram thumbnail in pixels.
+					When neither width nor height are provided, defaults to a value in proportion to the width.
+				</p>
 			]]></description>
 			<name>height</name>
 			<required>false</required>
