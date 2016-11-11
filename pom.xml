@@ -38,6 +38,7 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses />.
 	<properties>
 		<shortTitle>Taglib</shortTitle>
 		<description.html><![CDATA[Java API for embedding <a target="_top" href="https://wiki.gnome.org/Apps/Dia/">Dia-based diagrams</a> in web pages in a JSP environment.]]></description.html>
+		<javadoc.taglibReference><![CDATA[<li><a target="_top" href="${project.url}semanticcms-dia.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
 	</properties>
 
 	<name>SemanticCMS Dia Taglib</name>
