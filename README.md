@@ -4,6 +4,7 @@ Java API for embedding [Dia-based diagrams](https://wiki.gnome.org/Apps/Dia/) in
 ## Project Links
 * [Project Home](https://semanticcms.com/dia/taglib/)
 * [Changelog](https://semanticcms.com/dia/taglib/changelog)
+* [Taglib Reference](https://semanticcms.com/dia/taglib/semanticcms-dia.tld/)
 * [API Docs](https://semanticcms.com/dia/taglib/apidocs/)
 * [Maven Central Repository](https://search.maven.org/#search%7Cgav%7C1%7Cg:%22com.semanticcms%22%20AND%20a:%22semanticcms-dia-taglib%22)
 * [GitHub](https://github.com/aoindustries/semanticcms-dia-taglib)
