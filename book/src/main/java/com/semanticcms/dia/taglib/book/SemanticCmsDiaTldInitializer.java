@@ -23,32 +23,22 @@
 package com.semanticcms.dia.taglib.book;
 
 import com.semanticcms.tagreference.TagReferenceInitializer;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.Collections;
 
 /**
  * @author  AO Industries, Inc.
  */
 public class SemanticCmsDiaTldInitializer extends TagReferenceInitializer {
 
-	private static final String TLD_BOOK = "/dia/taglib";
-	private static final String TLD_PATH = "/semanticcms-dia.tld";
-	static final String TLD_SERVLET_PATH = TLD_BOOK + TLD_PATH;
-
-	private static final Map<String,String> additionalApiLinks = new LinkedHashMap<String,String>();
-	static {
-		additionalApiLinks.put("com.semanticcms.dia.taglib.", "https://semanticcms.com/dia/taglib/apidocs/");
-	}
-
 	public SemanticCmsDiaTldInitializer() {
 		super(
 			"Dia Taglib Reference",
 			"Taglib Reference",
-			TLD_BOOK,
-			TLD_PATH,
+			"/dia/taglib",
+			"/semanticcms-dia.tld",
 			"https://docs.oracle.com/javase/6/docs/api/",
 			"https://docs.oracle.com/javaee/6/api/",
-			additionalApiLinks
+			Collections.singletonMap("com.semanticcms.dia.taglib.", "https://semanticcms.com/dia/taglib/apidocs/")
 		);
 	}
 }
