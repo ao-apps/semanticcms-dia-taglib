@@ -1,6 +1,6 @@
 /*
  * semanticcms-dia-taglib - Java API for embedding Dia-based diagrams in web pages in a JSP environment.
- * Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -56,6 +56,11 @@ public class DiaTag extends ElementTag<Dia> {
 		this.label = label;
 	}
 
+	private ValueExpression domain;
+	public void setDomain(ValueExpression domain) {
+		this.domain = domain;
+	}
+
 	private ValueExpression book;
 	public void setBook(ValueExpression book) {
 		this.book = book;
@@ -85,6 +90,7 @@ public class DiaTag extends ElementTag<Dia> {
 	protected void evaluateAttributes(Dia dia, ELContext elContext) throws JspTagException, IOException {
 		super.evaluateAttributes(dia, elContext);
 		dia.setLabel(resolveValue(label, String.class, elContext));
+		dia.setDomain(resolveValue(domain, String.class, elContext));
 		dia.setBook(resolveValue(book, String.class, elContext));
 		dia.setPath(resolveValue(path, String.class, elContext));
 		dia.setWidth(zeroIfEmpty(resolveValue(width, Integer.class, elContext)));
