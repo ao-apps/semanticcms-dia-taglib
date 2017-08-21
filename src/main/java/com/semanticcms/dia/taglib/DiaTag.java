@@ -28,7 +28,7 @@ import com.aoindustries.io.buffer.BufferWriter;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.aoindustries.taglib.AutoEncodingBufferedTag;
 import com.semanticcms.core.model.ElementContext;
-import com.semanticcms.core.servlet.CaptureLevel;
+import com.semanticcms.core.pages.CaptureLevel;
 import com.semanticcms.core.taglib.ElementTag;
 import com.semanticcms.dia.model.Dia;
 import com.semanticcms.dia.servlet.impl.DiaImpl;
