@@ -25,6 +25,7 @@ package com.semanticcms.dia.taglib;
 import static com.aoindustries.encoding.Coercion.zeroIfEmpty;
 import com.aoindustries.io.buffer.BufferResult;
 import com.aoindustries.io.buffer.BufferWriter;
+import com.aoindustries.net.DomainName;
 import com.aoindustries.net.Path;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.aoindustries.taglib.AutoEncodingBufferedTag;
@@ -91,7 +92,13 @@ public class DiaTag extends ElementTag<Dia> {
 		try {
 			super.evaluateAttributes(dia, elContext);
 			dia.setLabel(resolveValue(label, String.class, elContext));
-			dia.setDomain(resolveValue(domain, String.class, elContext));
+			dia.setDomain(
+				DomainName.valueOf(
+					StringUtility.nullIfEmpty(
+						resolveValue(domain, String.class, elContext)
+					)
+				)
+			);
 			dia.setBook(
 				Path.valueOf(
 					StringUtility.nullIfEmpty(
