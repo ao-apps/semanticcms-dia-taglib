@@ -22,6 +22,10 @@
  */
 package com.semanticcms.dia.taglib.book;
 
+import com.aoindustries.net.Path;
+import com.aoindustries.validation.ValidationException;
+import com.semanticcms.core.model.BookRef;
+import com.semanticcms.core.model.ResourceRef;
 import com.semanticcms.tagreference.TagReferenceInitializer;
 import java.util.Collections;
 
@@ -30,13 +34,17 @@ import java.util.Collections;
  */
 public class SemanticCmsDiaTldInitializer extends TagReferenceInitializer {
 
-	public SemanticCmsDiaTldInitializer() {
+	public SemanticCmsDiaTldInitializer() throws ValidationException {
 		super(
 			"Dia Taglib Reference",
 			"Taglib Reference",
-			"semanticcms.com",
-			"/dia/taglib",
-			"/semanticcms-dia.tld",
+			new ResourceRef(
+				new BookRef(
+					"semanticcms.com",
+					Path.valueOf("/dia/taglib")
+				),
+				Path.valueOf("/semanticcms-dia.tld")
+			),
 			Maven.properties.getProperty("javac.link.javaApi.jdk16"),
 			Maven.properties.getProperty("javac.link.javaeeApi.6"),
 			Collections.singletonMap("com.semanticcms.dia.taglib.", Maven.properties.getProperty("documented.url") + "apidocs/")

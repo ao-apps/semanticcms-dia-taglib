@@ -25,8 +25,11 @@ package com.semanticcms.dia.taglib;
 import static com.aoindustries.encoding.Coercion.zeroIfEmpty;
 import com.aoindustries.io.buffer.BufferResult;
 import com.aoindustries.io.buffer.BufferWriter;
+import com.aoindustries.net.Path;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.aoindustries.taglib.AutoEncodingBufferedTag;
+import com.aoindustries.util.StringUtility;
+import com.aoindustries.validation.ValidationException;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.CaptureLevel;
 import com.semanticcms.core.taglib.ElementTag;
@@ -85,13 +88,23 @@ public class DiaTag extends ElementTag<Dia> {
 
 	@Override
 	protected void evaluateAttributes(Dia dia, ELContext elContext) throws JspTagException, IOException {
-		super.evaluateAttributes(dia, elContext);
-		dia.setLabel(resolveValue(label, String.class, elContext));
-		dia.setDomain(resolveValue(domain, String.class, elContext));
-		dia.setBook(resolveValue(book, String.class, elContext));
-		dia.setPath(resolveValue(path, String.class, elContext));
-		dia.setWidth(zeroIfEmpty(resolveValue(width, Integer.class, elContext)));
-		dia.setHeight(zeroIfEmpty(resolveValue(height, Integer.class, elContext)));
+		try {
+			super.evaluateAttributes(dia, elContext);
+			dia.setLabel(resolveValue(label, String.class, elContext));
+			dia.setDomain(resolveValue(domain, String.class, elContext));
+			dia.setBook(
+				Path.valueOf(
+					StringUtility.nullIfEmpty(
+						resolveValue(book, String.class, elContext)
+					)
+				)
+			);
+			dia.setPath(resolveValue(path, String.class, elContext));
+			dia.setWidth(zeroIfEmpty(resolveValue(width, Integer.class, elContext)));
+			dia.setHeight(zeroIfEmpty(resolveValue(height, Integer.class, elContext)));
+		} catch(ValidationException e) {
+			throw new JspTagException(e);
+		}
 	}
 
 	private BufferResult writeMe;
