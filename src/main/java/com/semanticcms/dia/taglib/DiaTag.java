@@ -35,7 +35,7 @@ import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.CaptureLevel;
 import com.semanticcms.core.taglib.ElementTag;
 import com.semanticcms.dia.model.Dia;
-import com.semanticcms.dia.servlet.impl.DiaImpl;
+import com.semanticcms.dia.renderer.html.DiaHtmlRenderer;
 import java.io.IOException;
 import java.io.Writer;
 import javax.el.ELContext;
@@ -128,7 +128,7 @@ public class DiaTag extends ElementTag<Dia> {
 				capturedOut = null;
 			}
 			try {
-				DiaImpl.writeDiaImpl(
+				DiaHtmlRenderer.writeDiaImpl(
 					pageContext.getServletContext(),
 					request,
 					(HttpServletResponse)pageContext.getResponse(),
