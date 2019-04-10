@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-dia-taglib - Java API for embedding Dia-based diagrams in web pages in a JSP environment.
-Copyright (C) 2016, 2017  AO Industries, Inc.
+Copyright (C) 2016, 2017, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -45,7 +45,7 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses />.
 		<javadoc.taglibReference><![CDATA[<li><a target="_top" href="${project.url}semanticcms-dia.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
 	</properties>
 
-	<name>SemanticCMS Dia Taglib</name>
+	<name>SemanticCMS 1 Dia Taglib</name>
 	<url>https://semanticcms.com/dia/taglib/</url>
 	<description>Java API for embedding Dia-based diagrams in web pages in a JSP environment.</description>
 	<inceptionYear>2013</inceptionYear>
