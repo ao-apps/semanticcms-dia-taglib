@@ -1,6 +1,6 @@
 /*
  * semanticcms-dia-taglib - Java API for embedding Dia-based diagrams in web pages in a JSP environment.
- * Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,11 +23,8 @@
 package com.semanticcms.dia.taglib;
 
 import static com.aoindustries.encoding.Coercion.zeroIfEmpty;
-import com.aoindustries.io.TempFileList;
-import com.aoindustries.io.buffer.AutoTempFileWriter;
 import com.aoindustries.io.buffer.BufferResult;
 import com.aoindustries.io.buffer.BufferWriter;
-import com.aoindustries.servlet.filter.TempFileContext;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.aoindustries.taglib.AutoEncodingBufferedTag;
 import com.semanticcms.core.model.ElementContext;
@@ -100,18 +97,7 @@ public class DiaTag extends ElementTag<Dia> {
 			final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 			BufferWriter capturedOut;
 			if(captureLevel == CaptureLevel.BODY) {
-				// Enable temp files if temp file context active
-				capturedOut = TempFileContext.wrapTempFileList(
-					AutoEncodingBufferedTag.newBufferWriter(),
-					request,
-					// Java 1.8: AutoTempFileWriter::new
-					new TempFileContext.Wrapper<BufferWriter>() {
-						@Override
-						public BufferWriter call(BufferWriter original, TempFileList tempFileList) {
-							return new AutoTempFileWriter(original, tempFileList);
-						}
-					}
-				);
+				capturedOut = AutoEncodingBufferedTag.newBufferWriter(request);
 			} else {
 				capturedOut = null;
 			}
