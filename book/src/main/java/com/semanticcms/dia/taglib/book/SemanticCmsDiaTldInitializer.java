@@ -25,9 +25,6 @@ package com.semanticcms.dia.taglib.book;
 import com.semanticcms.tagreference.TagReferenceInitializer;
 import java.util.Collections;
 
-/**
- * @author  AO Industries, Inc.
- */
 public class SemanticCmsDiaTldInitializer extends TagReferenceInitializer {
 
 	public SemanticCmsDiaTldInitializer() {
@@ -36,7 +33,7 @@ public class SemanticCmsDiaTldInitializer extends TagReferenceInitializer {
 			"Taglib Reference",
 			"/dia/taglib",
 			"/semanticcms-dia.tld",
-			Maven.properties.getProperty("javac.link.javaApi.jdk16"),
+			Maven.properties.getProperty("javac.link.javaApi.jdk6"),
 			Maven.properties.getProperty("javac.link.javaeeApi.6"),
 			Collections.singletonMap("com.semanticcms.dia.taglib.", Maven.properties.getProperty("documented.url") + "apidocs")
 		);
