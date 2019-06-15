@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-dia-taglib - Java API for embedding Dia-based diagrams in web pages in a JSP environment.
-Copyright (C) 2013, 2014, 2015, 2016, 2017  AO Industries, Inc.
+Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019  AO Industries, Inc.
 	support@aoindustries.com
 	7262 Bull Pen Cir
 	Mobile, AL 36695
@@ -25,6 +25,8 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 	version="2.1">
+	<!-- datePublished="2016-08-10T12:22:14-0500" -->
+	<!-- dateModified="2016-11-11T14:35:51-0600" -->
 	<description><![CDATA[
 		<p>@{description.html}</p>
 	]]></description>
@@ -36,6 +38,8 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses/>.
 	<short-name>dia</short-name>
 	<uri>@{project.url}</uri>
 	<tag>
+		<!-- datePublished="2016-08-10T12:22:14-0500" -->
+		<!-- dateModified="2017-08-02T15:56:49-0500" -->
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
 				Gets a PNG export of a <a href="https://wiki.gnome.org/Apps/Dia/">Dia diagram</a> as an &lt;img&gt; tag.
