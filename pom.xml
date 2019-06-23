@@ -114,7 +114,7 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-model</artifactId><version>1.4.4-validation-SNAPSHOT</version>
 			</dependency>
 			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-servlet</artifactId><version>1.5.1-SNAPSHOT</version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-servlet</artifactId><version>1.5.1-validation-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
