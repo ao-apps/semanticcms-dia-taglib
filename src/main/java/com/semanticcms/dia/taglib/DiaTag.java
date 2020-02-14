@@ -1,6 +1,6 @@
 /*
  * semanticcms-dia-taglib - Java API for embedding Dia-based diagrams in web pages in a JSP environment.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,6 +23,7 @@
 package com.semanticcms.dia.taglib;
 
 import static com.aoindustries.encoding.Coercion.zeroIfEmpty;
+import com.aoindustries.html.servlet.HtmlEE;
 import com.aoindustries.io.buffer.BufferResult;
 import com.aoindustries.io.buffer.BufferWriter;
 import com.aoindustries.net.DomainName;
@@ -40,6 +41,7 @@ import java.io.IOException;
 import java.io.Writer;
 import javax.el.ELContext;
 import javax.el.ValueExpression;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -128,11 +130,12 @@ public class DiaTag extends ElementTag<Dia> {
 				capturedOut = null;
 			}
 			try {
+				ServletContext servletContext = pageContext.getServletContext();
 				DiaHtmlRenderer.writeDiaImpl(
-					pageContext.getServletContext(),
+					servletContext,
 					request,
 					(HttpServletResponse)pageContext.getResponse(),
-					capturedOut,
+					(capturedOut == null) ? null : HtmlEE.get(servletContext, request, capturedOut),
 					dia
 				);
 			} finally {
