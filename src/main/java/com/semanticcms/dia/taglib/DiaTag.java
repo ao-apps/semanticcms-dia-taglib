@@ -30,7 +30,7 @@ import com.aoindustries.net.DomainName;
 import com.aoindustries.net.Path;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.aoindustries.taglib.AutoEncodingBufferedTag;
-import com.aoindustries.util.StringUtility;
+import com.aoindustries.lang.Strings;
 import com.aoindustries.validation.ValidationException;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.CaptureLevel;
@@ -96,14 +96,14 @@ public class DiaTag extends ElementTag<Dia> {
 			dia.setLabel(resolveValue(label, String.class, elContext));
 			dia.setDomain(
 				DomainName.valueOf(
-					StringUtility.nullIfEmpty(
+					Strings.nullIfEmpty(
 						resolveValue(domain, String.class, elContext)
 					)
 				)
 			);
 			dia.setBook(
 				Path.valueOf(
-					StringUtility.nullIfEmpty(
+					Strings.nullIfEmpty(
 						resolveValue(book, String.class, elContext)
 					)
 				)
