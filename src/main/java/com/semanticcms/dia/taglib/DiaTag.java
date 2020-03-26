@@ -26,11 +26,11 @@ import static com.aoindustries.encoding.Coercion.zeroIfEmpty;
 import com.aoindustries.html.servlet.HtmlEE;
 import com.aoindustries.io.buffer.BufferResult;
 import com.aoindustries.io.buffer.BufferWriter;
+import com.aoindustries.lang.Strings;
 import com.aoindustries.net.DomainName;
 import com.aoindustries.net.Path;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.aoindustries.taglib.AutoEncodingBufferedTag;
-import com.aoindustries.lang.Strings;
 import com.aoindustries.validation.ValidationException;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.CaptureLevel;
@@ -131,11 +131,12 @@ public class DiaTag extends ElementTag<Dia> {
 			}
 			try {
 				ServletContext servletContext = pageContext.getServletContext();
+				HttpServletResponse response = (HttpServletResponse)pageContext.getResponse();
 				DiaHtmlRenderer.writeDiaImpl(
 					servletContext,
 					request,
-					(HttpServletResponse)pageContext.getResponse(),
-					(capturedOut == null) ? null : HtmlEE.get(servletContext, request, capturedOut),
+					response,
+					(capturedOut == null) ? null : HtmlEE.get(servletContext, request, response, capturedOut),
 					dia
 				);
 			} finally {
