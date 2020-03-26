@@ -105,11 +105,12 @@ public class DiaTag extends ElementTag<Dia> {
 			}
 			try {
 				ServletContext servletContext = pageContext.getServletContext();
+				HttpServletResponse response = (HttpServletResponse)pageContext.getResponse();
 				DiaImpl.writeDiaImpl(
 					servletContext,
 					request,
-					(HttpServletResponse)pageContext.getResponse(),
-					(capturedOut == null) ? null : HtmlEE.get(servletContext, request, capturedOut),
+					response,
+					(capturedOut == null) ? null : HtmlEE.get(servletContext, request, response, capturedOut),
 					dia
 				);
 			} finally {
