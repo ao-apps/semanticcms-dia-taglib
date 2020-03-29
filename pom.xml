@@ -119,7 +119,7 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-model</artifactId><version>1.4.6${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-servlet</artifactId><version>1.7.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-servlet</artifactId><version>1.7.0${POST-SNAPSHOT}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
