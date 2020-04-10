@@ -34,7 +34,7 @@ public class SemanticCmsDiaTldInitializer extends TagReferenceInitializer {
 			"/dia/taglib",
 			"/semanticcms-dia.tld",
 			Maven.properties.getProperty("documented.javadoc.link.javase"),
-			Maven.properties.getProperty("javadoc.link.javaee.6"),
+			Maven.properties.getProperty("documented.javadoc.link.javaee"),
 			Collections.singletonMap("com.semanticcms.dia.taglib.", Maven.properties.getProperty("project.url") + "apidocs/")
 		);
 	}
