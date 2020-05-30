@@ -34,7 +34,7 @@ public class SemanticCmsDiaTldInitializer extends TagReferenceInitializer {
 
 	public SemanticCmsDiaTldInitializer() throws ValidationException {
 		super(
-			"Dia Taglib Reference",
+			Maven.properties.getProperty("project.name") + " Reference",
 			"Taglib Reference",
 			new ResourceRef(
 				new BookRef(
