@@ -95,11 +95,6 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses />.
 									<artifactItems>
 										<!-- Direct -->
 										<artifactItem>
-											<groupId>com.aoindustries</groupId><artifactId>ao-encoding</artifactId><classifier>javadoc</classifier>
-											<includes>element-list, package-list</includes>
-											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-encoding</outputDirectory>
-										</artifactItem>
-										<artifactItem>
 											<groupId>com.aoindustries</groupId><artifactId>ao-encoding-taglib</artifactId><classifier>javadoc</classifier>
 											<includes>element-list, package-list</includes>
 											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-encoding-taglib</outputDirectory>
@@ -162,10 +157,6 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses />.
 						<configuration>
 							<offlineLinks>
 								<!-- Direct -->
-								<offlineLink>
-									<url>https://aoindustries.com/ao-encoding/apidocs/</url>
-									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-encoding</location>
-								</offlineLink>
 								<offlineLink>
 									<url>https://aoindustries.com/ao-encoding/taglib/apidocs/</url>
 									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-encoding-taglib</location>
@@ -231,9 +222,6 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses />.
 		<dependencies>
 			<!-- Direct -->
 			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-encoding</artifactId><version>3.2.1${POST-SNAPSHOT}</version>
-			</dependency>
-			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-encoding-taglib</artifactId><version>1.0.2${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
@@ -272,6 +260,9 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses />.
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-concurrent</artifactId><version>3.1.0${POST-SNAPSHOT}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-encoding</artifactId><version>3.3.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-encoding-servlet</artifactId><version>3.0.0${POST-SNAPSHOT}</version>
@@ -332,9 +323,6 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses />.
 
 	<dependencies>
 		<!-- Direct -->
-		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>ao-encoding</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-encoding-taglib</artifactId>
 		</dependency>
