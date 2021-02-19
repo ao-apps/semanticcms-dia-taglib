@@ -23,7 +23,7 @@
 package com.semanticcms.dia.taglib;
 
 import com.aoindustries.encoding.taglib.EncodingBufferedTag;
-import com.aoindustries.html.servlet.HtmlEE;
+import com.aoindustries.html.servlet.DocumentEE;
 import com.aoindustries.io.buffer.BufferResult;
 import com.aoindustries.io.buffer.BufferWriter;
 import com.aoindustries.lang.Strings;
@@ -133,11 +133,10 @@ public class DiaTag extends ElementTag<Dia> {
 			try {
 				ServletContext servletContext = pageContext.getServletContext();
 				HttpServletResponse response = (HttpServletResponse)pageContext.getResponse();
-				DiaHtmlRenderer.writeDiaImpl(
-					servletContext,
+				DiaHtmlRenderer.writeDiaImpl(servletContext,
 					request,
 					response,
-					(capturedOut == null) ? null : HtmlEE.get(servletContext, request, response, capturedOut),
+					(capturedOut == null) ? null : DocumentEE.get(servletContext, request, response, capturedOut),
 					dia
 				);
 			} finally {
