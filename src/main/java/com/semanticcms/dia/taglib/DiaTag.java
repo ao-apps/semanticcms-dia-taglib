@@ -111,7 +111,7 @@ public class DiaTag extends ElementTag<Dia> {
 					servletContext,
 					request,
 					response,
-					(capturedOut == null) ? null : DocumentEE.get(
+					(capturedOut == null) ? null : new DocumentEE(
 						servletContext,
 						request,
 						response,
