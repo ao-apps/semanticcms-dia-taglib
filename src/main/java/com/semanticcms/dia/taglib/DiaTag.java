@@ -136,7 +136,7 @@ public class DiaTag extends ElementTag<Dia> {
 				DiaHtmlRenderer.writeDiaImpl(servletContext,
 					request,
 					response,
-					(capturedOut == null) ? null : DocumentEE.get(
+					(capturedOut == null) ? null : new DocumentEE(
 						servletContext,
 						request,
 						response,
