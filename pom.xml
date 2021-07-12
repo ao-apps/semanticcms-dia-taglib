@@ -39,6 +39,10 @@ along with semanticcms-dia-taglib.  If not, see <http://www.gnu.org/licenses />.
 / <a target="${javadoc.target}" href="${project.url}">Taglib</a>]]></javadoc.breadcrumbs>
 		<description.html><![CDATA[Java API for embedding <a target="${javadoc.target}" href="https://wiki.gnome.org/Apps/Dia/">Dia-based diagrams</a> in web pages in a JSP environment.]]></description.html>
 		<javadoc.taglibReference><![CDATA[<li><a target="${javadoc.target}" href="${project.url}semanticcms-dia.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
+		<!-- SonarCloud.io -->
+		<sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
+		<sonar.organization>aoindustries</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
 	<name>SemanticCMS Dia Taglib²</name>
