@@ -29,15 +29,15 @@ public class SemanticCmsDiaTldInitializer extends TagReferenceInitializer {
 
   public SemanticCmsDiaTldInitializer() {
     super(
-      Maven.properties.getProperty("documented.name") + " Reference",
-      "Taglib Reference",
-      "/dia/taglib",
-      "/semanticcms-dia.tld",
-      true,
-      Maven.properties.getProperty("documented.javadoc.link.javase"),
-      Maven.properties.getProperty("documented.javadoc.link.javaee"),
-      // Self
-      "com.semanticcms.dia.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.semanticcms.dia.taglib/"
+        Maven.properties.getProperty("documented.name") + " Reference",
+        "Taglib Reference",
+        "/dia/taglib",
+        "/semanticcms-dia.tld",
+        true,
+        Maven.properties.getProperty("documented.javadoc.link.javase"),
+        Maven.properties.getProperty("documented.javadoc.link.javaee"),
+        // Self
+        "com.semanticcms.dia.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.semanticcms.dia.taglib/"
     );
   }
 }
