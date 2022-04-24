@@ -55,31 +55,37 @@ import javax.servlet.jsp.PageContext;
 public class DiaTag extends ElementTag<Dia> {
 
   private ValueExpression label;
+
   public void setLabel(ValueExpression label) {
     this.label = label;
   }
 
   private ValueExpression domain;
+
   public void setDomain(ValueExpression domain) {
     this.domain = domain;
   }
 
   private ValueExpression book;
+
   public void setBook(ValueExpression book) {
     this.book = book;
   }
 
   private ValueExpression path;
+
   public void setPath(ValueExpression path) {
     this.path = path;
   }
 
   private ValueExpression width;
+
   public void setWidth(ValueExpression width) {
     this.width = width;
   }
 
   private ValueExpression height;
+
   public void setHeight(ValueExpression height) {
     this.height = height;
   }
@@ -95,18 +101,18 @@ public class DiaTag extends ElementTag<Dia> {
       super.evaluateAttributes(dia, elContext);
       dia.setLabel(resolveValue(label, String.class, elContext));
       dia.setDomain(
-        DomainName.valueOf(
-          Strings.nullIfEmpty(
-            resolveValue(domain, String.class, elContext)
+          DomainName.valueOf(
+              Strings.nullIfEmpty(
+                  resolveValue(domain, String.class, elContext)
+              )
           )
-        )
       );
       dia.setBook(
-        Path.valueOf(
-          Strings.nullIfEmpty(
-            resolveValue(book, String.class, elContext)
+          Path.valueOf(
+              Strings.nullIfEmpty(
+                  resolveValue(book, String.class, elContext)
+              )
           )
-        )
       );
       dia.setPath(resolveValue(path, String.class, elContext));
       Integer _width = resolveValue(width, Integer.class, elContext);
@@ -119,12 +125,13 @@ public class DiaTag extends ElementTag<Dia> {
   }
 
   private BufferResult writeMe;
+
   @Override
   protected void doBody(Dia dia, CaptureLevel captureLevel) throws JspException, IOException {
     try {
       super.doBody(dia, captureLevel);
-      final PageContext pageContext = (PageContext)getJspContext();
-      final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
+      final PageContext pageContext = (PageContext) getJspContext();
+      final HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
       BufferWriter capturedOut;
       if (captureLevel == CaptureLevel.BODY) {
         capturedOut = EncodingBufferedTag.newBufferWriter(request);
@@ -133,19 +140,19 @@ public class DiaTag extends ElementTag<Dia> {
       }
       try {
         ServletContext servletContext = pageContext.getServletContext();
-        HttpServletResponse response = (HttpServletResponse)pageContext.getResponse();
+        HttpServletResponse response = (HttpServletResponse) pageContext.getResponse();
         DiaHtmlRenderer.writeDiaImpl(servletContext,
-          request,
-          response,
-          (capturedOut == null) ? null : new DocumentEE(
-            servletContext,
             request,
             response,
-            capturedOut,
-            false, // Do not add extra newlines to JSP
-            false  // Do not add extra indentation to JSP
-          ),
-          dia
+            (capturedOut == null) ? null : new DocumentEE(
+                servletContext,
+                request,
+                response,
+                capturedOut,
+                false, // Do not add extra newlines to JSP
+                false  // Do not add extra indentation to JSP
+            ),
+            dia
         );
       } finally {
         if (capturedOut != null) {
