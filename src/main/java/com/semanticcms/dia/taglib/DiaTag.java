@@ -23,6 +23,8 @@
 
 package com.semanticcms.dia.taglib;
 
+import static com.aoapps.taglib.AttributeUtils.resolveValue;
+
 import com.aoapps.encoding.taglib.EncodingBufferedTag;
 import com.aoapps.html.servlet.DocumentEE;
 import com.aoapps.io.buffer.BufferResult;
@@ -31,7 +33,6 @@ import com.aoapps.lang.Strings;
 import com.aoapps.lang.validation.ValidationException;
 import com.aoapps.net.DomainName;
 import com.aoapps.net.Path;
-import static com.aoapps.taglib.AttributeUtils.resolveValue;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.CaptureLevel;
 import com.semanticcms.core.taglib.ElementTag;
@@ -115,10 +116,10 @@ public class DiaTag extends ElementTag<Dia> {
           )
       );
       dia.setPath(resolveValue(path, String.class, elContext));
-      Integer _width = resolveValue(width, Integer.class, elContext);
-      dia.setWidth(_width == null ? 0 : _width);
-      Integer _height = resolveValue(height, Integer.class, elContext);
-      dia.setHeight(_height == null ? 0 : _height);
+      Integer myWidth = resolveValue(width, Integer.class, elContext);
+      dia.setWidth(myWidth == null ? 0 : myWidth);
+      Integer myHeight = resolveValue(height, Integer.class, elContext);
+      dia.setHeight(myHeight == null ? 0 : myHeight);
     } catch (ValidationException e) {
       throw new JspTagException(e);
     }
