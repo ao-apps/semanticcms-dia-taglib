@@ -24,9 +24,16 @@
 package com.semanticcms.dia.taglib.book;
 
 import com.semanticcms.tagreference.TagReferenceInitializer;
+import javax.servlet.ServletContainerInitializer;
 
+/**
+ * Initializes a tag reference during {@linkplain ServletContainerInitializer application start-up}.
+ */
 public class SemanticCmsDiaTldInitializer extends TagReferenceInitializer {
 
+  /**
+   * Parses the TLD file.
+   */
   public SemanticCmsDiaTldInitializer() {
     super(
         Maven.properties.getProperty("documented.name") + " Reference",
