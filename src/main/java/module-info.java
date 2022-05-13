@@ -36,4 +36,4 @@ module com.semanticcms.dia.taglib {
   requires com.semanticcms.core.taglib; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId>
   requires com.semanticcms.dia.model; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-model</artifactId>
   requires com.semanticcms.dia.servlet; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-servlet</artifactId>
-} // TODO: Avoiding rewrite-maven-plugin-4.22.2 truncation
+}
