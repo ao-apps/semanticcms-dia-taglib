@@ -142,7 +142,8 @@ public class DiaTag extends ElementTag<Dia> {
       try {
         ServletContext servletContext = pageContext.getServletContext();
         HttpServletResponse response = (HttpServletResponse) pageContext.getResponse();
-        DiaHtmlRenderer.writeDiaImpl(servletContext,
+        DiaHtmlRenderer.writeDiaImpl(
+            servletContext,
             request,
             response,
             (capturedOut == null) ? null : new DocumentEE(
