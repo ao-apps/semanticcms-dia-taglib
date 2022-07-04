@@ -36,15 +36,15 @@ along with semanticcms-dia-taglib.  If not, see <https://www.gnu.org/licenses/>.
     <module.name>com.semanticcms.dia.taglib.book</module.name>
     <!-- These values are copied from the project being documented -->
     <documented.artifactId>semanticcms-dia-taglib</documented.artifactId>
-    <documented.name>SemanticCMS Dia Taglib²</documented.name>
+    <documented.name>SemanticCMS Dia Taglib</documented.name>
     <documented.description>Java API for embedding Dia-based diagrams in web pages in a JSP environment.</documented.description>
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
   </properties>
 
-  <name>SemanticCMS Dia Taglib² Book</name>
+  <name>SemanticCMS Dia Taglib Book</name>
   <url>https://semanticcms.com/dia/taglib/</url>
-  <description>Documentation for SemanticCMS Dia Taglib² in SemanticCMS format.</description>
+  <description>Documentation for SemanticCMS Dia Taglib in SemanticCMS format.</description>
   <inceptionYear>2013</inceptionYear>
 
   <licenses>

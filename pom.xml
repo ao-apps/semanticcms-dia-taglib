@@ -47,7 +47,7 @@ along with semanticcms-dia-taglib.  If not, see <https://www.gnu.org/licenses/>.
     <sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
   </properties>
 
-  <name>SemanticCMS Dia Taglib²</name>
+  <name>SemanticCMS Dia Taglib</name>
   <url>https://semanticcms.com/dia/taglib/</url>
   <description>Java API for embedding Dia-based diagrams in web pages in a JSP environment.</description>
   <inceptionYear>2013</inceptionYear>
