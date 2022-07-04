@@ -27,6 +27,9 @@ def upstreamProjects = [
   // Parent
   '../parent', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-parent</artifactId>
 
+  // Plugins
+  'taglib', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-taglib</artifactId>
+
   // Direct
   '../../oss/badges-1.x', // <groupId>com.aoapps</groupId><artifactId>ao-badges</artifactId>
   '../../oss/lang', // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
