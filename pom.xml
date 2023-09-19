@@ -39,8 +39,9 @@ along with semanticcms-dia-taglib.  If not, see <https://www.gnu.org/licenses/>.
     <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a>
 / <a target="${javadoc.target}" href="https://semanticcms.com/dia/">Dia</a>
 / <a target="${javadoc.target}" href="${project.url}">Taglib</a>]]></javadoc.breadcrumbs>
-    <description.html><![CDATA[Java API for embedding <a target="${javadoc.target}" href="https://wiki.gnome.org/Apps/Dia/">Dia-based diagrams</a> in web pages in a JSP environment.]]></description.html>
     <javadoc.taglibReference><![CDATA[<li><a target="${javadoc.target}" href="${project.url}semanticcms-dia.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
+    
+    <description.html><![CDATA[Java API for embedding <a target="${javadoc.target}" href="https://wiki.gnome.org/Apps/Dia/">Dia-based diagrams</a> in web pages in a JSP environment.]]></description.html>
     <!-- TODO: Implement tests -->
     <sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
   </properties>
