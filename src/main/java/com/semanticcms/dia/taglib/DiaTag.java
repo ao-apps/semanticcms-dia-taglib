@@ -87,7 +87,7 @@ public class DiaTag extends ElementTag<Dia> {
   }
 
   @Override
-  protected void evaluateAttributes(Dia dia, ELContext elContext) throws JspTagException, IOException {
+  protected void evaluateAttributes(Dia dia, ELContext elContext) throws JspTagException {
     super.evaluateAttributes(dia, elContext);
     dia.setLabel(resolveValue(label, String.class, elContext));
     dia.setBook(resolveValue(book, String.class, elContext));
