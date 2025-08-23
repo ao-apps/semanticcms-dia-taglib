@@ -27,3 +27,6 @@ d15a48820da627bd7610083dd6c807fd22ed9b82
 # Performed manual checkstyle clean-up
 c45e6abf29f3a2261879ac55dd9daf9eeab64c0c
 ae19ddaae14863d65cc0d21ae5e41bc5e373de68
+
+# Removed unnecessary whitespace
+496e3381a50d0f526ca1c2a506105af9283ca9cf
