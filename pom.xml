@@ -29,12 +29,12 @@ along with semanticcms-dia-taglib.  If not, see <https://www.gnu.org/licenses/>.
     <relativePath>../../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-taglib</artifactId><version>1.22.0-SNAPSHOT</version>
+  <groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-taglib</artifactId><version>1.22.0</version>
   <packaging>jar</packaging>
 
   <properties>
     <!-- Must be set to ${git.commit.time} for snapshots or ISO 8601 timestamp for releases. -->
-    <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2026-02-03T06:02:22Z</project.build.outputTimestamp>
     <module.name>com.semanticcms.dia.taglib</module.name>
     <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a>
 / <a target="${javadoc.target}" href="https://semanticcms.com/dia/">Dia</a>
@@ -78,7 +78,7 @@ along with semanticcms-dia-taglib.  If not, see <https://www.gnu.org/licenses/>.
     <connection>scm:git:git://github.com/ao-apps/semanticcms-dia-taglib.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/semanticcms-dia-taglib.git</developerConnection>
     <url>https://github.com/ao-apps/semanticcms-dia-taglib</url>
-    <tag>HEAD</tag>
+    <tag>semanticcms-dia-taglib-1.22.0</tag>
   </scm>
 
   <issueManagement>
