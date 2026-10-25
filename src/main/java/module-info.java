@@ -21,7 +21,6 @@
  * along with semanticcms-dia-taglib.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.semanticcms.dia.taglib {
-  exports com.semanticcms.dia.taglib;
   // Direct
   requires com.aoapps.encoding.taglib; // <groupId>com.aoapps</groupId><artifactId>ao-encoding-taglib</artifactId>
   requires com.aoapps.html.any; // <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId>
@@ -36,4 +35,6 @@ module com.semanticcms.dia.taglib {
   requires com.semanticcms.core.taglib; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId>
   requires com.semanticcms.dia.model; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-model</artifactId>
   requires com.semanticcms.dia.servlet; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-dia-servlet</artifactId>
+
+  exports com.semanticcms.dia.taglib;
 }
